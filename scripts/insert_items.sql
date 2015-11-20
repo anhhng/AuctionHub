@@ -5,6 +5,5 @@
 	
 	INSERT INTO items ( name, description, post_price, end_date, image, condition, poster_email, winner_email ) values ('boombox', 'loud ad hell, you will love it', 140, '2015-11-19', 'test_items\boombox.jpg', 'mint', 'poster3@gmail.com' , 'winner3@email.com')^
 	
-	INSERT INTO items ( name, description, post_price, end_date, image, condition,poster_email, winner_email ) values ('car', 'woom woom fast, just buy it', 35000, '2015-11-30', 'test_items\car.jpg', 'new', 'poster4@gmail.com' , 'winner4@email.com')^
 	
    
