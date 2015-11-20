@@ -9,9 +9,9 @@ CREATE TABLE items	(
 				name	VARCHAR(20) NOT NULL,
                 description	VARCHAR(256) NOT NULL,	
 				post_price INT,
-				post_date date NOT NULL WITH DEFAULT CURRENT DATE,
-				post_time time NOT NULL WITH DEFAULT CURRENT TIME,
-				end_date date,
+				post_date DATE NOT NULL WITH DEFAULT CURRENT DATE,
+				post_time TIME NOT NULL WITH DEFAULT CURRENT TIME,
+				end_date DATE,
 				image CLOB(5242880),
 				condition CHAR(10),
 				poster_email VARCHAR(50),
@@ -35,6 +35,8 @@ CREATE TABLE bids	(
 						number_of_bids INT,
 						highest_bid_amount INT,
 						highest_bidder VARCHAR (50),
+						end_date DATE,
+						end_time TIME,
 						poster_email VARCHAR (50),
 						FOREIGN KEY (item_id) REFERENCES items (id) ON DELETE CASCADE
 						)^
@@ -47,5 +49,5 @@ FOR EACH ROW
 MODE DB2SQL
 
 BEGIN ATOMIC
-	INSERT INTO bids (item_id,number_of_bids,highest_bid_amount,poster_email) VALUES (newrow.id,0,newrow.post_price,newrow.poster_email);
+	INSERT INTO bids (item_id, number_of_bids, highest_bid_amount, end_date, end_time, poster_email) VALUES (newrow.id, 0, newrow.post_price, newrow.end_date, newrow.post_time, newrow.poster_email);
 END^						
