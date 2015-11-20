@@ -8,6 +8,7 @@ DB2 -td"^" -f scripts/create_tables.sql
 
 DB2 -td"^" -f scripts/insert_items.sql
 DB2 -td"^" -f scripts/insert_users.sql
+DB2 -td"^" -f scripts/insert_bids.sql
 
 
 
