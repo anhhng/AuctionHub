@@ -23,7 +23,7 @@ CREATE TABLE items	(
 CREATE TABLE users	(
 				first_name VARCHAR(30),
 				last_name VARCHAR(30),
-				email VARCHAR(50) NOT NULL,
+				email VARCHAR(50) NOT NULL UNIQUE,
 				password VARCHAR(20) NOT NULL,
 				is_seller CHAR(1) CHECK ( is_seller IN ( 'T' , 'F' ) )
 				

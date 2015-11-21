@@ -13,14 +13,16 @@ if( isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['username']
 		$userName = $_POST['username'];
 		$password = $_POST['password'];
 
-		$insertsql = "INSERT INTO OWNER.USERS (first_name, last_name, email, password) VALUES (".$firstName.", ".$lastName.", ".$userName.", ".$password.")";
+		$insertsql = "INSERT INTO OWNER.USERS (first_name, last_name, email, password) VALUES ('$firstName', '$lastName', '$userName', '$password') ";
 		
 		$stmt = db2_prepare($conn, $insertsql);
             
             if ($stmt) {
-                        echo $stmt;
+                        
                         $result = db2_execute($stmt);
+                        
                         if ($result){
+
                         	echo "success!";
                         	db2_close($conn);
                         }

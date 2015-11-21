@@ -16,7 +16,7 @@
 <body>
 
     <?php
-    if (isset($_SESSION['userlogged']))
+    if (isset($_SESSION['username']))
     {   
     ?>
     
