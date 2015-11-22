@@ -15,16 +15,16 @@
             $price = $_POST['price'];
             $quality = $_POST['quality'];
             $img = $_POST['img_upload'];
-
             
-            $insertsql = "";
+            $insertsql = "INSERT INTO OWNER.USERS (item, description, price, quality, image) VALUES ($item,
+                $description, $price, $quality, $img)";
             $stmt = db2_prepare($conn, $insertsql);
 
             if($stmt){
                 $result = db2_execute($stmt);
 
                 if($result){
-                    echo "success";
+                    echo "__Your Item Has Been Posted__";
                     db2_close($conn);
                 }
                 else {
