@@ -89,25 +89,44 @@
           $('#submit').click(function() {
             var item = $('input.item').keyup(function() {
               $(this).val();
-            });
+                });
 
             var description = $('#textarea.description').keyup(function() {
               $(this).val();
-              });
+                });
 
             var init_price = $('#input.price').keyup(function() {
               $(this).val();
-              });
+                });
 
-            var quality = $('input.quality:checked').val();
+            var quality = $('#input.quality:checked').val();
 
-            alert(item + quality);
+            var data = {
+                'item': item,
+                'description': description,
+                'price': init_price,
+                'quality': quality
+            };
+
+            $.ajax ({
+                data: JSON.stringify(data),
+                url: '/test.php',
+                method: 'GET',
+                contentType: 'application/json',
+                success: function(msg){
+                    alert(msg);
+                }
+                error: function(error){
+                    alert(JSON.stringify(error));
+                }
+                });
           });
 
           $('#reset').click(function() {
             location.reload(true);
           });
       });
+     
     </script>
 
 
@@ -132,7 +151,7 @@
 
     <div class='section'>
       <!-- Item Post -->
-      <form action="">
+      <form action='test.php' method='POST' id='form'>
         <p>
           Item Name:<br/><br/>
           <input class='item' type='text' name='item' value='Item Name' size='32'></input>
@@ -164,13 +183,13 @@
 
         <p>
           Upload Image:<br/><br/>
-          <input class='img_upload' id='img_upload' type='button' value='Upload Image'/>
+          <input class='img_upload' id='img_upload' name='img_upload' type='button' value='Upload Image'/>
         </p>
 
         <!-- Submit and Reset button-->
         <p>
-          <input class='submit' id='submit' type='button' value='Post'/>
-          <input class='reset' id='reset' type='button' value='Reset'/>
+          <input class='submit' id='submit' type='button' name='submit' value='Post'/>
+          <input class='reset' id='reset' type='button' name='reset' value='Reset'/>
         </p>
       </form>
     </div>
