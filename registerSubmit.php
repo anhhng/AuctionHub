@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include 'connect.php';
 
 if( isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['username']) && isset($_POST['password']) ){
@@ -23,7 +25,8 @@ if( isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['username']
                         
                         if ($result){
 
-                        	echo "success!";
+                        	$_SESSION['username'] = $userName;
+                        	header('Location: nav.php');
                         	db2_close($conn);
                         }
                         else{
@@ -31,7 +34,8 @@ if( isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['username']
                         	db2_close($conn);
                         }
 
-        }	
+        	}
+
 	}
 	
 }

@@ -1,0 +1,86 @@
+
+
+html, body{       
+
+    width:100%;
+	height:100%;
+    margin:0px;
+    padding:0px;
+
+background: #f2f6f8;
+background: -moz-linear-gradient(-45deg, hsla(200,30%,96%,1) 0%, hsla(204,24%,88%,1) 39%, hsla(201,20%,64%,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, hsla(200,30%,96%,1)), color-stop(39%, hsla(204,24%,88%,1)), color-stop(100%, hsla(201,20%,64%,1)));
+background: -webkit-linear-gradient(-45deg, hsla(200,30%,96%,1) 0%, hsla(204,24%,88%,1) 39%, hsla(201,20%,64%,1) 100%);
+background: -o-linear-gradient(-45deg, hsla(200,30%,96%,1) 0%, hsla(204,24%,88%,1) 39%, hsla(201,20%,64%,1) 100%);
+background: -ms-linear-gradient(-45deg, hsla(200,30%,96%,1) 0%, hsla(204,24%,88%,1) 39%, hsla(201,20%,64%,1) 100%);
+background: linear-gradient(135deg, hsla(200,30%,96%,1) 0%, hsla(204,24%,88%,1) 39%, hsla(201,20%,64%,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#91a9b6', GradientType=1 );
+}	
+
+
+body > header {
+	margin: 8px 5px 0px 5px;
+	font: italic bold Georgia, sans-serif;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+body > header > h2 {
+	color: #000000;
+	#c6be62;
+}
+body > header > img {
+	float:left;
+	width: 200px;
+	height: 260px;
+	border-radius: 8px;
+	margin-right: 5px;
+}
+
+
+
+
+.navbar {
+	margin-top: 0;
+	padding: 5px 1px 5px;	
+	border-style: solid;
+	border-color: #b5af8f;
+	border-width: 6px;
+	border-radius: 8px;
+}
+
+img {
+	border : 5px solid #B5AF8F	
+}	
+
+#badgerJob h5, h6{
+	display: inline;
+}
+
+#sonyJob h5, h6{
+	display: inline;
+}
+
+body > section {
+	padding-bottom: 40px
+}
+/*
+.navbar .container ul .current a:hover{
+	background-color: #91a9b6;
+}
+
+.navbar  ul  li a:hover{
+	background-color: #91a9b6;
+	color: white;
+}
+.navbar  .nav-pills  li a:active {
+	background-color: #000000;
+}
+
+.navbar > ul  > li a:active {
+	background-color: #b5af8f;
+}
+
+*/
+
+
