@@ -38,10 +38,10 @@
     <body>
 
         <?php
-        require_once('config.php');
+        require_once('connect.php');
         require_once('nav.php');
         //Connect to DB2
-        $connection = db2_connect($dbname, $username, $password);
+        $connection = db2_connect($database, $dbusername, $dbpassword);
         if (!$connection) {
             die('Not connected : ' . db2_conn_error());
         }
@@ -64,14 +64,14 @@
                 $searchedItem = $_POST['searchterm'];
                 trim($searchedItem);
                 $searchedItem = stripslashes($searchedItem);
-                $query = "Select * from ahmed.items where name='" . $searchedItem . "'";
+                $query = "Select * from ".$computerUserName.".items where name='" . $searchedItem . "'";
                 $stmt = db2_prepare($connection, $query);
                 $result = db2_execute($stmt);
 
                 if ($stmt) {
                     while ($row = db2_fetch_array($stmt)) {
                         echo "<tr>";
-                        echo "<td><image src='" . $row[8] . "' width = 175 height = 175 </image></a></td>";
+                        echo "<td><image src='" . $row[7] . "' width = 175 height = 175 </image></a></td>";
                         echo "<td>" . $row[1] . "</td>";
                         echo "<td> Hello</td>";
                         echo "<td> Hello</td>";														
