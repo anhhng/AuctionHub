@@ -4,7 +4,7 @@
     include 'connect.php';
 
     if( isset($_POST['item']) && isset($_POST['description']) && isset($_POST['price']) && isset($_POST['quality'])
-        isset($_POST['img_upload'])) {
+        && isset($_POST['time'])) {
 
         $conn = db2_connect($database, $dbusername, $dbpassword);
 
@@ -16,8 +16,8 @@
             $quality = $_POST['quality'];
             $img = $_POST['img_upload'];
             
-            $insertsql = "INSERT INTO OWNER.USERS (item, description, price, quality, image) VALUES ($item,
-                $description, $price, $quality, $img)";
+            $insertsql = "INSERT INTO OWNER.USERS (item, description, price, quality, time) VALUES ('$item',
+                '$description', '$price', '$quality', '$img')";
             $stmt = db2_prepare($conn, $insertsql);
 
             if($stmt){
