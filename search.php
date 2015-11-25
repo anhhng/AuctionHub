@@ -64,14 +64,14 @@
                 $searchedItem = $_POST['searchterm'];
                 trim($searchedItem);
                 $searchedItem = stripslashes($searchedItem);
-                $query = "Select * from ahmed.items where name='" . $searchedItem . "'";
+                $query = "Select * from ".$computerName.".items where name='" . $searchedItem . "'";
                 $stmt = db2_prepare($connection, $query);
                 $result = db2_execute($stmt);
 
                 if ($stmt) {
                     while ($row = db2_fetch_array($stmt)) {
                         echo "<tr>";
-                        echo "<td><image src='" . $row[8] . "' width = 175 height = 175 </image></a></td>";
+                        echo "<td><image src='" . $row[7] . "' width = 175 height = 175 </image></a></td>";
                         echo "<td>" . $row[1] . "</td>";
                         echo "<td> Hello</td>";
                         echo "<td> Hello</td>";														

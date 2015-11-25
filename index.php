@@ -1,4 +1,5 @@
 <?php
+
 require_once('config.php');
 require_once('nav.php');
 $connection = db2_connect($dbname, $username, $password);
@@ -63,7 +64,7 @@ and open the template in the editor.
                     <th>Number of Bids</th>
                 </tr>
                <?php
-               $query = "Select * from ahmed.items";
+               $query = "Select * from ".$computerName.".ITEMS";
                $stmt = db2_prepare($connection,$query);
                 $result = db2_execute($stmt);
                
@@ -71,7 +72,7 @@ and open the template in the editor.
                    
                    while($row = db2_fetch_array($stmt)){
                        echo "<tr>";
-		       echo "<td><image src='" . $row[8] . "' width = 175 height = 175 </image></a></td>"; 
+		       echo "<td><image src='" . $row[7] . "' width = 175 height = 175 </image></a></td>"; 
                        echo "<td>".$row[1]."</td>";
                        echo "<td> Hello</td>";
                        echo "<td> Hello</td>";

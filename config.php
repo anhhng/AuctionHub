@@ -2,5 +2,5 @@
 $dbname="auction";
 $username="db2admin";
 $password="cs174";
-$computerName = "ahmed";
+$computerName = "OWNER";
     ?>
