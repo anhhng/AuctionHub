@@ -36,7 +36,7 @@ include 'connect.php';
 
 							$_SESSION['username'] = $usernameEntered;
 							
-							header('Location: index.php');
+							header('Location: test.php');
 							
 							}
 

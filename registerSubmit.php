@@ -18,12 +18,10 @@ if( isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['username']
 		$stmt = db2_prepare($conn, $insertsql);
             
             if ($stmt) {
-                        
                         $result = db2_execute($stmt);
                         
                         if ($result){
-
-                        	echo "success!";
+                                header('location: index.php');
                         	db2_close($conn);
                         }
                         else{
